@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Филимонова Екатерина — портфолио</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sand: #f4efe6;
+      --paper: #faf7f2;
+      --cream: #fffdf9;
+      --beige: #e8ddd0;
+      --moss: #5c7a68;
+      --sage: #7a9a88;
+      --mint: #c9ddd4;
+      --teal: #4a7c74;
+      --ink: #2c332f;
+      --muted: #5e6a64;
+      --shadow: 0 12px 40px rgba(74, 90, 80, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Outfit", sans-serif;
+      color: var(--ink);
+      background: var(--sand);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 22px 64px;
+    }
+
+    header.nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 22px;
+      background: rgba(255, 253, 249, 0.78);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(232, 221, 208, 0.9);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      font-family: "Fraunces", serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 400;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--cream);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--teal);
+      border: 1.5px solid var(--mint);
+    }
+
+    .btn[disabled],
+    .btn.is-disabled {
+      background: #d7e4dc;
+      color: #7d8f86;
+      cursor: not-allowed;
+      pointer-events: none;
+      border: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(220px, 340px) 1fr;
+      gap: 48px;
+      align-items: center;
+      background: var(--cream);
+      border-radius: 32px;
+      padding: 40px 44px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--beige);
+      margin-bottom: 36px;
+    }
+
+    .photo-frame {
+      position: relative;
+      width: min(100%, 300px);
+      margin: 0 auto;
+      aspect-ratio: 1;
+      padding: 10px;
+      border-radius: 36px;
+      background:
+        linear-gradient(145deg, #e7f3ee, #f3e8d8 45%, #d8ebe3);
+      box-shadow: 0 18px 36px rgba(74, 124, 116, 0.14);
+    }
+
+    .photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-radius: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      pointer-events: none;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 52% 18%;
+      border-radius: 26px;
+      display: block;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    h1, h2 {
+      font-family: "Fraunces", serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); margin-bottom: 16px; }
+    h2 { font-size: 1.65rem; margin-bottom: 16px; }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 46ch;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .section {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--beige);
+      margin-bottom: 28px;
+    }
+
+    .section p { color: var(--muted); max-width: 70ch; }
+
+    .skills {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .skills li {
+      color: var(--muted);
+      padding-left: 0;
+    }
+
+    .skills li::before {
+      content: "—  ";
+      color: var(--sage);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--paper);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--beige);
+      box-shadow: 0 8px 24px rgba(74, 90, 80, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(74, 90, 80, 0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      background: var(--mint);
+    }
+
+    .card figcaption {
+      padding: 16px 18px 18px;
+      font-weight: 500;
+      font-size: 0.98rem;
+    }
+
+    .card span {
+      display: block;
+      font-weight: 400;
+      font-size: 0.82rem;
+      color: var(--sage);
+      margin-top: 4px;
+    }
+
+    .contacts {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .contact-list a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-list a:hover { text-decoration: underline; }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .social {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--mint);
+      color: var(--teal);
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+
+    .social:hover { background: #d8ebe4; }
+    .social svg { width: 20px; height: 20px; fill: currentColor; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 800px) {
+      header.nav { border-radius: 22px; flex-direction: column; }
+      .hero, .contacts, .gallery { grid-template-columns: 1fr; }
+      .hero, .section { padding: 28px 22px; }
+      .card img { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="logo">Екатерина Филимонова</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#skills">Навыки</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="photo-frame">
+        <img src="photo.jpg" alt="Филимонова Екатерина" />
+      </div>
+      <div>
+        <p class="eyebrow">Портфолио · Вайб-кодинг</p>
+        <h1>Филимонова Екатерина</h1>
+        <p class="lead">Выпускница курса «Вайб-кодинг» Школы нейросетей и СММ Ксении Барановой. Создаю сайты, интегрирую AI-решения и превращаю идеи в цифровые продукты</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacts">Связаться</a>
+          <button class="btn is-disabled" type="button" disabled aria-disabled="true" title="Скоро">Скачать резюме</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>Обо мне</h2>
+      <p>Я Екатерина Филимонова, выпускница курса «Вайб-кодинг». За время обучения я освоила современные инструменты веб-разработки и научилась создавать сайты с нуля, работать с AI-помощниками, настраивать ботов и интегрировать нейросети в реальные проекты. Мой подход — соединять технологии и человеческое внимание, чтобы создавать продукты, которые решают задачи и вдохновляют</p>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Освоила навыки и технологии</h2>
+      <ul class="skills">
+        <li>Создание сайтов (HTML, CSS, JavaScript, React)</li>
+        <li>Работа с AI-кодом (Cursor, Lovable)</li>
+        <li>Git и GitHub (публикация проектов)</li>
+        <li>Интеграция чат-ботов (Telegram, ВКонтакте)</li>
+        <li>Настройка административных панелей</li>
+        <li>Адаптивная вёрстка и дизайн</li>
+        <li>Публикация на GitHub Pages</li>
+        <li>Основы создания мобильных приложений (Android Studio)</li>
+      </ul>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Мои проекты</h2>
+      <div class="gallery">
+        <figure class="card">
+          <img src="project-psychologist.png" alt="Сайт для психолога — скриншот лендинга" />
+          <figcaption>
+            Сайт для психолога
+            <span>Лендинг · вёрстка и дизайн</span>
+          </figcaption>
+        </figure>
+        <figure class="card">
+          <img src="project-budget.png" alt="Калькулятор семейного бюджета — скриншот приложения" />
+          <figcaption>
+            Веб-приложение Калькулятор семейного бюджета
+            <span>Веб-приложение · интерфейс</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <h2>Контакты</h2>
+      <div class="contacts">
+        <div>
+          <ul class="contact-list">
+            <li>Telegram: <a href="https://t.me/Ekaterina_Cherryart" target="_blank" rel="noopener">@Ekaterina_Cherryart</a></li>
+            <li>Email: <a href="mailto:filimonova1408katya@gmail.com">filimonova1408katya@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 4px;">Соцсети</p>
+          <div class="socials" aria-label="Иконки социальных сетей">
+            <a class="social" href="#" aria-label="Telegram (заглушка)" title="Telegram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.3 18.6 19c-.2.9-.8 1.1-1.6.7l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.9.4l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L6.4 13.2 2 11.8c-.9-.3-.9-1 .2-1.4L20.3 3.6c.8-.3 1.5.2 1.2.7z"/></svg>
+            </a>
+            <a class="social" href="#" aria-label="ВКонтакте (заглушка)" title="ВКонтакте">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.1 18.2c-5.4 0-8.5-3.7-8.6-9.9h2.7c.1 4.6 2.1 6.5 3.7 6.9V8.3h2.5v3.9c1.6-.2 3.2-2 3.8-3.9h2.5c-.5 2.6-2.3 4.5-3.6 5.3 1.3.7 3.4 2.3 4.2 4.6h-2.8c-.6-1.8-2.2-3.2-4.1-3.4v3.4h-.3z"/></svg>
+            </a>
+            <a class="social" href="#" aria-label="GitHub (заглушка)" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 Филимонова Екатерина · Школа нейросетей и СММ Ксении Барановой</footer>
+  </div>
+</body>
+</html>
